@@ -25,10 +25,6 @@ nav a {
   padding: 0.5em;     
 }
 
-nav a:hover {
-  background-color: #efefef;
-}
-
 nav a.current {
   
   border-bottom: 0.4em solid oklch(80% 3% 200);
