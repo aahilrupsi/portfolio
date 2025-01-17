@@ -7,3 +7,28 @@ body {
     margin-inline: auto;
     padding: 1rem;
   }
+
+nav {
+  display: flex;       
+  gap: 1rem;           
+  background-color: 
+  padding: 0.5rem;    
+}
+
+nav a {
+  flex: 1;             
+  text-align: center;  
+  text-decoration: none; 
+  color: #000;        
+  padding: 0.5rem;     
+}
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+nav a.current {
+  font-weight: bold;       
+  color: darkblue;         
+  border-bottom: 2px solid darkblue; 
+}
