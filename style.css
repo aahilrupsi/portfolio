@@ -11,24 +11,28 @@ body {
 nav {
   display: flex;       
   gap: 1rem;           
-  background-color: 
-  padding: 0.5rem;    
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid oklch(80% 3% 200);
+  color: #000;
 }
 
 nav a {
   flex: 1;             
   text-align: center;  
   text-decoration: none; 
-  color: #000;        
-  padding: 0.5rem;     
+  color: inherit;        
+  padding: 0.5em;     
 }
 
 nav a:hover {
-  background-color: #ddd;
+  background-color: #efefef;
 }
 
 nav a.current {
+  
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0.1em;
   font-weight: bold;       
-  color: darkblue;         
-  border-bottom: 2px solid darkblue; 
+  background-color: #fefefe; 
 }
