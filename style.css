@@ -1,24 +1,27 @@
+
 input,
 textarea,
 button {
   font: inherit;
 }
 
+
 :root {
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
 }
 
-body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-    max-width: 100ch;
-    margin-inline: auto;
-    padding: 1rem;
-  }
 
+body {
+
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  
+  padding: 1rem;
+}
+
+/* Navigation stylg */
 nav {
   display: flex; 
   align-items: flex-end;
@@ -36,7 +39,6 @@ nav a {
 }
 
 nav a.current {
-  
   border-bottom: 0.4em solid oklch(80% 3% 200);
   padding-bottom: 0.1em;
 }
@@ -46,6 +48,7 @@ nav a:hover {
   padding-bottom: 0.1em;  
 }
 
+/* Form styling */
 form {
   display: grid;
   grid-template-columns: [start] auto [middle] 1fr [end];
@@ -69,8 +72,92 @@ form button {
   cursor: pointer;
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;  
+
+  text-wrap: balance;  
+  
+  
+  margin: 0;                  
+}
+
+
+h1 {
+  font-size: 4rem;            
+  margin-bottom: 0.5em;       
+}
+
+/* Specific Styling for h2 */
+h2 {
+  font-size: 2rem;           
+  margin-bottom: 0.5em;      
+}
+
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+
+.projects h2 {
+
+  margin: 0;
+
+}
+
+
 .projects {
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1rem;
+  gap: 1em;
+}
+
+
+.projects > article {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1em;
+  border: 1px solid #ddd;
+
+
+
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+
+.projects img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0.5em; 
+  margin-bottom: 0.5em; 
+  object-fit: cover; 
+}
+
+
+.projects p {
+  flex-grow: 1;
+  
+  text-align: justify;
+  margin-top: 0.5em;
 }
