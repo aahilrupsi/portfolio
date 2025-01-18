@@ -45,3 +45,20 @@ nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;  
 }
+
+label, 
+input, 
+textarea, 
+button {
+  display: block; 
+}
+
+input,
+textarea {
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+label {
+  margin-block: 1rem;
+}
