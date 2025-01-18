@@ -63,7 +63,8 @@ form label {
 }
 
 form button {
-  justify-self: center; 
+  grid-column: 1 / -1; 
+  text-align: center;
   padding: 0.5em 1em;
   cursor: pointer;
 }
