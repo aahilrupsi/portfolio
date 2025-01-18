@@ -46,28 +46,24 @@ nav a:hover {
   padding-bottom: 0.1em;  
 }
 
-label, 
-input, 
-textarea, 
-button {
-  display: block; 
-  box-sizing: border-box;
+form {
+  display: grid;
+  grid-template-columns: [start] auto [middle] 1fr [end];
+  gap: 1em; 
 }
 
-input,
-textarea {
-  width: 100%; 
-  padding: 0.5rem;
-  box-sizing: border-box;
+form label,
+form button {
+  grid-column: start / end;
 }
 
-label {
-  margin-block: 0.5rem;
+form label {
+  display: grid;
+  grid-template-columns: subgrid; 
 }
 
-button {
-  width: 100%;
-  text-align: center;  
-  padding: 0.5rem;     
-  cursor: pointer;     
+form button {
+  justify-self: center; 
+  padding: 0.5em 1em;
+  cursor: pointer;
 }
