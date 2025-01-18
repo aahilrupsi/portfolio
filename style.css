@@ -5,23 +5,28 @@ button {
   font: inherit;
 }
 
-
 :root {
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
+  --font-primary: system-ui, sans-serif;
+  --font-size-base: 16px;
+  --spacing-small: 0.5em;
+  --spacing-medium: 1em;
+  --spacing-large: 2em;
+  --color-background: #f9f9f9;
+  --color-border: #ddd;
+  --color-text: #333;
 }
-
 
 body {
-
-  font: 100%/1.5 system-ui;
+  font: 100%/1.5 var(--font-primary);
   max-width: 100ch;
   margin-inline: auto;
-  
   padding: 1rem;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
-/* Navigation stylg */
 nav {
   display: flex; 
   align-items: flex-end;
@@ -48,7 +53,6 @@ nav a:hover {
   padding-bottom: 0.1em;  
 }
 
-/* Form styling */
 form {
   display: grid;
   grid-template-columns: [start] auto [middle] 1fr [end];
@@ -72,28 +76,21 @@ form button {
   cursor: pointer;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.1;  
-
-  text-wrap: balance;  
-  
-  
-  margin: 0;                  
+  line-height: 1.1;
+  text-wrap: balance;
+  margin: 0;
 }
-
 
 h1 {
-  font-size: 4rem;            
-  margin-bottom: 0.5em;       
+  font-size: 4rem;
+  margin-bottom: 0.5em;
 }
 
-/* Specific Styling for h2 */
 h2 {
-  font-size: 2rem;           
-  margin-bottom: 0.5em;      
+  font-size: 2rem;
+  margin-bottom: 0.5em;
 }
-
 
 h3 {
   font-size: 1.75rem;
@@ -115,49 +112,144 @@ h6 {
   margin-bottom: 0.5em;
 }
 
-
 .projects h2 {
-
   margin: 0;
-
 }
 
-
 .projects {
-
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1em;
 }
 
-
 .projects > article {
   display: flex;
   flex-direction: column;
-
   padding: 1em;
-  border: 1px solid #ddd;
-
-
-
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
-
 
 .projects img {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 0.5em; 
-  margin-bottom: 0.5em; 
-  object-fit: cover; 
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  object-fit: cover;
 }
-
 
 .projects p {
   flex-grow: 1;
-  
   text-align: justify;
   margin-top: 0.5em;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+header a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-large);
+}
+
+section {
+  background-color: #fff;
+  padding: var(--spacing-medium);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+section header {
+  margin-bottom: var(--spacing-small);
+}
+
+section h2 {
+  color: var(--color-accent);
+}
+
+section p {
+  margin-top: var(--spacing-small);
+  line-height: 1.6;
+}
+
+section article {
+  margin-bottom: var(--spacing-medium);
+}
+
+section article h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+section article p {
+  margin: 0.25em 0;
+  color: var(--color-text);
+}
+
+section article time {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+section article ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-top: 0.5em;
+}
+
+section article ul li {
+  margin-bottom: 0.5em;
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-large);
+  }
+
+  section {
+    padding: var(--spacing-large);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 2rem;
+  }
+
+  header h1 {
+    font-size: 4rem;
+  }
+
+  header p {
+    font-size: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 2.5rem;
+  }
+
+  section h3 {
+    font-size: 2rem;
+  }
 }
