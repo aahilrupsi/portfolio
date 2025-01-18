@@ -1,3 +1,9 @@
+input,
+textarea,
+button {
+  font: inherit;
+}
+
 :root {
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
