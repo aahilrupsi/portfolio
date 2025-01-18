@@ -11,8 +11,6 @@ body {
 nav {
   display: flex;       
   gap: 1rem;           
-  padding: 0.5em;
-  margin-bottom: 1em;
   border-bottom: 1px solid oklch(80% 3% 200);
   color: #000;
 }
