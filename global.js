@@ -9,9 +9,9 @@ function $$(selector, context = document) {
 
 let pages = [
   { url: 'https://aahilrupsi.github.io/portfolio/', title: 'About' },
-  { url: 'projects/', title: 'Projects' },
-  { url: 'contact/', title: 'Contact' },
-  { url: 'contact/resumepage.html', title: 'Resume' },
+  { url: 'https://aahilrupsi.github.io/portfolio/projects/', title: 'Projects' },
+  { url: 'https://aahilrupsi.github.io/portfolio/contact/', title: 'Contact' },
+  { url: 'https://aahilrupsi.github.io/portfolio/contact/resumepage.html', title: 'Resume' },
 ];
 
 let nav = document.createElement('nav');
