@@ -91,7 +91,7 @@ export function renderProjects(projectsArray, containerElement, headingLevel = '
   
   projectsArray.forEach((project) => {
     
-    const ARE_WE_HOME = location.pathname === '/' || location.pathname.endsWith('/index.html');
+    const ARE_WE_HOME = location.pathname === '/' || location.pathname.endsWith('/index.html') || location.pathname === '/portfolio/';
     console.log(location.pathname);
     console.log(ARE_WE_HOME);
     console.log("plz werk");
