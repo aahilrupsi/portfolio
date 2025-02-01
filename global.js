@@ -9,9 +9,9 @@ function $$(selector, context = document) {
 
 let pages = [
   { url: 'https://aahilrupsi.github.io/portfolio/', title: 'About' },
-  { url: 'https://aahilrupsi.github.io/portfolio/projects/', title: 'Projects' },
-  { url: 'https://aahilrupsi.github.io/portfolio/contact/', title: 'Contact' },
-  { url: 'https://aahilrupsi.github.io/portfolio/contact/resumepage.html', title: 'Resume' },
+  { url: 'projects/', title: 'Projects' },
+  { url: 'contact/', title: 'Contact' },
+  { url: 'contact/resumepage.html', title: 'Resume' },
 ];
 
 let nav = document.createElement('nav');
@@ -67,7 +67,43 @@ select.addEventListener("input", function (event) {
   localStorage.colorScheme = newScheme; 
 });
 
+export async function fetchJSON(url) {
+  try {
+    
+    const response = await fetch(url);
 
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
 
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
 
+export function renderProjects(projectsArray, containerElement, headingLevel = 'h2') {
+  
+  containerElement.innerHTML = '';
+
+  
+  projectsArray.forEach((project) => {
+    const article = document.createElement('article');
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+    `;
+    
+    containerElement.appendChild(article);
+  });
+}
+
+export async function fetchGitHubData(username) {
+  
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
 

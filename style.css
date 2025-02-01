@@ -269,3 +269,20 @@ section article ul li {
   font: inherit; 
 }
 }
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+  
+}
+
+#profile-stats dd {
+  grid-row: 2;
+
+}
+
