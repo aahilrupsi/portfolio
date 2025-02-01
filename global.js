@@ -4,9 +4,6 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-
-
-
 let pages = [
   { url: 'https://aahilrupsi.github.io/portfolio/', title: 'About' },
   { url: 'https://aahilrupsi.github.io/portfolio/projects/', title: 'Projects' },
@@ -26,6 +23,7 @@ for (let p of pages) {
   }
   let a = document.createElement('a');
   a.href = url;
+  //console.log(a.href);
   a.textContent = p.title;
 
   a.classList.toggle(
@@ -35,7 +33,7 @@ for (let p of pages) {
 
   a.toggleAttribute('target', a.host !== location.host);
 
-
+  
   nav.append(a);
 }
 
@@ -89,12 +87,18 @@ export function renderProjects(projectsArray, containerElement, headingLevel = '
   
   containerElement.innerHTML = '';
 
+
   
   projectsArray.forEach((project) => {
+    
+    const ARE_WE_HOME = location.pathname === '/' || location.pathname.endsWith('/index.html');
+    console.log(ARE_WE_HOME);
+    const imagePath = ARE_WE_HOME ? project.image.replace('../', '') : project.image;
+    console.log(imagePath);
     const article = document.createElement('article');
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
-      <img src="${project.image}" alt="${project.title}">
+      <img src="${imagePath}" alt="${project.title}">
       <p>${project.description}</p>
     `;
     
