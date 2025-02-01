@@ -93,6 +93,7 @@ export function renderProjects(projectsArray, containerElement, headingLevel = '
     
     const ARE_WE_HOME = location.pathname === '/' || location.pathname.endsWith('/index.html');
     console.log(ARE_WE_HOME);
+    console.log("plz werk");
     const imagePath = ARE_WE_HOME ? project.image.replace('../', '') : project.image;
     console.log(imagePath);
     const article = document.createElement('article');
