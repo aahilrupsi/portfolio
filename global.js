@@ -9,9 +9,9 @@ const prefix = onProjectsPage ? '../' : './';
 
 let pages = [
   { url: prefix, title: 'About' },
-  { url: prefix + 'projects/', title: 'Projects' },
-  { url: prefix + 'contact/', title: 'Contact' },
-  { url: prefix + 'contact/resumepage.html', title: 'Resume' },
+  { url: prefix + 'portfolio/projects/', title: 'Projects' },
+  { url: prefix + 'portfolio/contact/', title: 'Contact' },
+  { url: prefix + 'portfolio/contact/resumepage.html', title: 'Resume' },
 ];
 
 let nav = document.createElement('nav');
