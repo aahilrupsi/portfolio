@@ -4,11 +4,14 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
+const onProjectsPage = location.pathname.includes('/projects/');
+const prefix = onProjectsPage ? '../' : './';
+
 let pages = [
-  { url: 'https://aahilrupsi.github.io/portfolio/', title: 'About' },
-  { url: 'https://aahilrupsi.github.io/portfolio/projects/', title: 'Projects' },
-  { url: 'https://aahilrupsi.github.io/portfolio/contact/', title: 'Contact' },
-  { url: 'https://aahilrupsi.github.io/portfolio/contact/resumepage.html', title: 'Resume' },
+  { url: prefix, title: 'About' },
+  { url: prefix + 'projects/', title: 'Projects' },
+  { url: prefix + 'contact/', title: 'Contact' },
+  { url: prefix + 'contact/resumepage.html', title: 'Resume' },
 ];
 
 let nav = document.createElement('nav');
@@ -87,28 +90,33 @@ export function renderProjects(projectsArray, containerElement, headingLevel = '
   
   containerElement.innerHTML = '';
 
-
-  
   projectsArray.forEach((project) => {
-    
-    const ARE_WE_HOME = location.pathname === '/' || location.pathname.endsWith('/index.html') || location.pathname === '/portfolio/';
-    console.log(location.pathname);
-    console.log(location.pathname == '/portfolio/');
-    console.log(location.pathname.endsWith('lio/'));
-    console.log(ARE_WE_HOME);
-    console.log("plz werk");
-    const imagePath = ARE_WE_HOME ? project.image.replace('../', '') : project.image;
-    console.log(imagePath);
+
+    const onProjectsPage = location.pathname.includes('/projects/');
+
+    const imagePath = onProjectsPage
+      ? '../' + project.image
+      : project.image;
+
+    console.log('Rendering project:', project.title);
+    console.log('onProjectsPage =', onProjectsPage, '=> imagePath =', imagePath);
+
+
     const article = document.createElement('article');
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <img src="${imagePath}" alt="${project.title}">
-      <p>${project.description}</p>
+      <div class="project-details">
+        <p>${project.description}</p>
+        <span class="project-year">${project.year}</span>
+      </div>
     `;
+
     
     containerElement.appendChild(article);
   });
 }
+
 
 export async function fetchGitHubData(username) {
   

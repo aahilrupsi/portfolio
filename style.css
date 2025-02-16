@@ -286,3 +286,107 @@ section article ul li {
 
 }
 
+.project-details {
+  display: flex;
+  flex-direction: column; 
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.project-year {
+  font-weight: bold;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+
+
+.chart-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+#projects-pie-plot {
+  width: 14em;
+  height: 14em;
+  flex-shrink: 0;
+}
+
+
+.legend {
+  display: grid;
+  
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  flex: 1;
+  align-items: center;
+
+  border: 1px solid #ccc;   
+  background-color: #fff;   
+  border-radius: 0.5rem; 
+}
+
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+
+.swatch {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: var(--color);
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.searchBar {
+  display: block;       
+  margin: 2rem auto;    
+  width: 65em;          
+  max-width: 100%;      
+  padding: 0.5rem 1rem; 
+  border: 1px solid #ccc; 
+  border-radius: 0.25rem;  
+}
+
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+path {
+  transition: 300ms;
+  cursor: pointer; 
+}
+
+
+.selected {
+  --color: oklch(60% 45% 0) !important; 
+}
+
+
+.selected:is(path) {
+  fill: var(--color);
+}
+
+
+.selected:is(li) {
+  outline: 1px solid var(--color);
+  outline-offset: 3px;
+}

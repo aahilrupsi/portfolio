@@ -2,73 +2,73 @@
     {
         "title": "Spending Tracker",
         "year": "2022",
-        "image": "../images/spendingtracker.jpg",
+        "image": "images/spendingtracker.jpg",
         "description": "Through my personal project, I have developed skills in data collection, visualization, and analysis. I created an interactive spending tracker that automatically adds entries to a Google Sheet, including dates, times, and payment methods. I also generated bar charts to visually track my spending patterns and identify areas of overspending."
     },
     {
         "title": "Regression Project for Predicting Insulin Resistance",
         "year": "2023",
-        "image": "../images/regressionproj.webp",
+        "image": "images/regressionproj.webp",
         "description": "Used a dataset containing measurements relating to pregnancy, glucose, blood pressure, skin thickness, BMI, diabetes pedigree function, and age to predict prognosis of Insulin Resistance."
     },
     {
         "title": "Connect 4 In C",
         "year": "2023",
-        "image": "../images/connect4.avif",
+        "image": "images/connect4.avif",
         "description": "I implemented Connect 4 which runs in the command line. There are options to play multiplayer or against a rudimentary AI with different degrees of difficulty. There is also an option to watch the AI play against itself based on where the user puts the first piece."
     },
     {
         "title": "Basic Image Processing App in Python",
         "year": "2022",
-        "image": "../images/editingapp.webp",
+        "image": "images/editingapp.webp",
         "description": "The project involved implementing classes for RGB images, image processing templates, and image classification using a K-nearest Neighbors (KNN) algorithm. Can perform simple image manipulation like inversion and crop"
     },
     {
         "title": "Battleship in C",
         "year": "2023",
-        "image": "../images/battleship.jpg",
+        "image": "images/battleship.jpg",
         "description": "I implemented Battleship which runs on a GUI. Multiplayer only and is adapted to work on separate devices over a LAN."
     },
     {
         "title": "Monte Carlo Simulations for Risk Analysis",
         "year": "2024",
-        "image": "../images/montecarlo.png",
+        "image": "images/montecarlo.png",
         "description": "Simulated stock price movements using Monte Carlo methods to assess investment risks."
     },
     {
         "title": "Graph Theory Application in Social Networks",
         "year": "2023",
-        "image": "../images/socialnetworks.jpeg",
+        "image": "images/socialnetworks.jpeg",
         "description": "Used graph theory to analyze and visualize social network connections, identifying central users and clusters."
     },
     {
         "title": "Personal Blog Setup",
         "year": "2022",
-        "image": "../images/blog.jpeg",
+        "image": "images/blog.jpeg",
         "description": "Implemented a personal blog with custom themes and layout options."
     },
     {
         "title": "Server-Side Scripting Lab",
         "year": "2023",
-        "image": "../images/server.jpeg",
+        "image": "images/server.jpeg",
         "description": "Practiced building and deploying a simple server-side application."
     },
     {
         "title": "Social Media Mockup",
         "year": "2021",
-        "image": "../images/mockup.avif",
+        "image": "images/mockup.avif",
         "description": "Created wireframes and mockups for a potential new social media platform."
     },
     {
         "title": "E-commerce Redesign",
         "year": "2021",
-        "image": "../images/ecom.jpg",
+        "image": "images/ecom.jpg",
         "description": "Redesigned a sample e-commerce site to improve user experience."
     },
     {
         "title": "AI Chatbot Experiment",
         "year": "2023",
-        "image": "../images/chatbot.png",
+        "image": "images/chatbot.png",
         "description": "Implemented a simple AI-powered chatbot using natural language processing."
     }
 ]
