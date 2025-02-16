@@ -4,14 +4,42 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-const onProjectsPage = location.pathname.includes('/projects/');
-const prefix = onProjectsPage ? '../' : './';
+function fixSlashes(str) {
+  // Only collapse slashes that aren't part of "http://"
+  return str.replace(/([^:])\/{2,}/g, '$1/');
+}
 
+/**
+ * 1) Determine which page we’re on. If we’re on the projects or meta pages,
+ *    we might want an extra "../" prefix to go back to the root.
+ */
+const onProjectsPage = location.pathname.includes('/projects/');
+const onMetaPage = location.pathname.includes('/meta/');
+let prefix = (onProjectsPage || onMetaPage) ? '../' : './';
+
+/**
+ * 2) Check if we’re on GitHub Pages. If so, we append "/portfolio"
+ *    so links resolve properly. Adjust as needed for your repo name.
+ */
+const isGitHubPages = window.location.hostname.includes('github.io');
+if (isGitHubPages) {
+  // e.g., "prefix" => "./" or "../"
+  // Then ensure we end up with ".../portfolio/"
+  prefix = prefix.replace(/\/+$/, '') + '/portfolio/';
+}
+
+// Fix potential double slashes
+prefix = fixSlashes(prefix);
+
+/**
+ * 3) Navigation array: define site pages and their URLs.
+ */
 let pages = [
-  { url: prefix, title: 'About' },
-  { url: prefix + 'portfolio/projects/', title: 'Projects' },
-  { url: prefix + 'portfolio/contact/', title: 'Contact' },
-  { url: prefix + 'portfolio/contact/resumepage.html', title: 'Resume' },
+  { url: prefix,                 title: 'About'    },
+  { url: prefix + 'projects/',   title: 'Projects' },
+  { url: prefix + 'contact/',    title: 'Contact'  },
+  { url: prefix + 'contact/resumepage.html', title: 'Resume' },
+  { url: prefix + 'meta/index.html',         title: 'Meta'   },
 ];
 
 let nav = document.createElement('nav');
