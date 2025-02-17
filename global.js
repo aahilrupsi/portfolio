@@ -4,30 +4,28 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-const onProjectsPage = location.pathname.includes('/projects/');
-const prefix = onProjectsPage ? '../' : './';
+const isSubfolder = location.pathname.includes('/projects/') ||
+                    location.pathname.includes('/contact/') ||
+                    location.pathname.includes('/meta/');
+const prefix = isSubfolder ? '../' : './';
+
 
 let pages = [
-  { url: prefix, title: 'About' },
-  { url: prefix + 'projects/', title: 'Projects' },
-  { url: prefix + 'contact/', title: 'Contact' },
+  { url: prefix + 'index.html',          title: 'About'   }, 
+  { url: prefix + 'projects/index.html', title: 'Projects'},
+  { url: prefix + 'contact/index.html',  title: 'Contact' },
   { url: prefix + 'contact/resumepage.html', title: 'Resume' },
-  { url: prefix + 'index.html', title: 'Meta'}
+  { url: prefix + 'meta/index.html',     title: 'Meta'    }
 ];
+
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 for (let p of pages) {
-  let url = p.url;
-  if (!ARE_WE_HOME && !url.startsWith('http')) {
-    url = '../' + url; 
-  }
   let a = document.createElement('a');
-  a.href = url;
-  //console.log(a.href);
+  a.href = p.url;
   a.textContent = p.title;
 
   a.classList.toggle(
@@ -35,11 +33,12 @@ for (let p of pages) {
     a.host === location.host && a.pathname === location.pathname
   );
 
+  
   a.toggleAttribute('target', a.host !== location.host);
 
-  
   nav.append(a);
 }
+
 
 document.body.insertAdjacentHTML(
   "afterbegin",
