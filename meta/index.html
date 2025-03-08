@@ -9,12 +9,40 @@
 
 <body>
   <h1>Meta Analysis</h1>
-  <p>This page will display interesting stats about our codebase.</p>
+  
+<div id="time-filter" style="display: flex; align-items: baseline;">
+  <label style="margin-right: 1rem;">
+    Show commits until:
+    <input 
+      id="timeSlider" 
+      type="range" 
+      min="0" 
+      max="100" 
+      value="100"
+    />
+  </label>
+  <time id="selectedTime" style="margin-left: auto;"></time>
+</div>
+
+<dl class="files"></dl>
+
+<h2>Summary</h2>
 
 <div id="stats"></div>
 
 <h2>Commits by time of day</h2>
-<div id="chart"></div>
+
+<div id="scrollytelling">
+  <div id="scroll-container">
+    <div id="spacer"></div>
+    <div id="items-container"></div>
+  </div>
+  <div id="chart"></div>
+</div>
+
+
+
+
 
 
 <dl id="commit-tooltip" class="info tooltip" hidden>
@@ -37,6 +65,16 @@
 <dl id="language-breakdown" class="stats"></dl>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script type="module">
+  import { loadData, updateTimeDisplay } from './main.js';
+  document.addEventListener('DOMContentLoaded', loadData);
+    loadData(); 
+    const slider = document.getElementById('timeSlider');
+    slider.addEventListener('input', () => {
+      updateTimeDisplay();
+  });
+</script>
 
 <script src="main.js" type="module"></script>
 </body>

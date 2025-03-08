@@ -418,7 +418,12 @@ path {
 
 .dots circle {
   transition: 150ms;
+  @starting-style {
+    r: 0;
+  }
 }
+
+
 .dots circle:hover {
   stroke: black;
   stroke-width: 1;
@@ -466,6 +471,9 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+  @starting-style {
+    r: 0;
+  }
 }
 circle:hover {
   transform: scale(1.5);
@@ -501,6 +509,9 @@ circle {
   cursor: pointer;
   transform-origin: center;
   transform-box: fill-box;
+  @starting-style {
+    r: 0;
+  }
 }
 circle:hover {
   transform: scale(1.5);
@@ -515,3 +526,125 @@ circle.selected {
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
 }
+
+.files {
+  display: grid;
+  gap: 1rem;
+}
+
+
+   
+.files > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1rem;
+}
+
+
+.files dt {
+  text-align: left;
+}
+
+
+.files dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15em;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.line {
+  display: inline-block;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: steelblue;
+  border-radius: 50%;
+}
+
+#scrollytelling {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#scroll-container {
+  grid-column: 1;
+  position: relative;
+  width: 95%;
+  height: 350px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+#chart {
+  grid-column: 2;
+}
+
+#spacer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none; 
+  pointer-events: none;
+}
+
+#items-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.item {
+  height: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #eee;
+}
+
+body.meta {
+  max-width: min(120ch, 80vw);
+  margin-inline: auto;
+}
+
+.files {
+  display: grid;
+  gap: 1rem;
+}
+
+.files > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1rem;
+}
+
+.files dt {
+  text-align: left;
+}
+
+.files dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15em;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.line {
+  display: inline-block;
+  width: 0.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+
+
